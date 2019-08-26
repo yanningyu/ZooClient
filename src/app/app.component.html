@@ -1,0 +1,22 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th style="padding-right: 20px">Category</th>
+        <th style="padding-right: 20px">Current Health Situation</th>
+        <th style="padding-right: 20px">Reduced Health Number</th>
+        <th style="padding-right: 20px">Survival Situation</th>
+        <th style="padding-right: 20px">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let animal of animals">
+        <td style="padding-right: 20px">{{animal.category}}</td>
+        <td style="padding-right: 20px">{{animal.currentAnimalHealthNumber}}</td>
+        <td style="padding-right: 20px">{{animal.reducedHealthNumber}}</td>
+        <td style="padding-right: 20px">{{animal.survivalSituation}}</td>
+        <td style="padding-right: 20px"><button [disabled]="!animal.survivalSituation" (click)="feedAnimal(animal)">Feed Animal</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
